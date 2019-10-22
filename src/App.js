@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 
 import lol from "riot-lol";
 
@@ -139,7 +140,9 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
+                  <Link to='/Champion'>
                   <img src={obj.imageUrl} alt={`img ${obj.name}`} height="60" width="60" />
+                  </Link>
                 </div>
               </OverlayTrigger>
             )
