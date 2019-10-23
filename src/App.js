@@ -160,7 +160,9 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
+                  <Link to= {`/Itens/${obj.name}`}>
                   <img src={item_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
+                  </Link>
                 </div>
               </OverlayTrigger>
             )
@@ -178,7 +180,9 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
+                  <Link to= {`/Summoners/${obj.name}`}>
                   <img src={summoner_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
+                  </Link>
                 </div>
               </OverlayTrigger>
             )
