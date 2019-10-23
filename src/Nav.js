@@ -10,7 +10,7 @@ function Nav () {
         <div>
         <Switch>
         <Route path="/" exact component={App}/>
-        <Route path="/champion" component={Champion}/>
+        <Route path="/champion/:id" component={Champion}/>
         </Switch>
         </div>
         </Router>

@@ -140,7 +140,7 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
-                  <Link to='/Champion'>
+                  <Link to= {`/Champion/${obj.name}`}>
                   <img src={obj.imageUrl} alt={`img ${obj.name}`} height="60" width="60" />
                   </Link>
                 </div>
