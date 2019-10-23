@@ -9,13 +9,15 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;  
+  color: white;
+}
+
+.Img {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: #282c34;
+  color: white;
 }
 
 .App-link {

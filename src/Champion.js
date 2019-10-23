@@ -1,5 +1,8 @@
 import React,{ useState, useEffect} from 'react';
 import lol from "riot-lol";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom';
 
 
 
@@ -20,11 +23,21 @@ function Champion ({match}) {
 
 
     }, []);
+    
     if (champion) {
         return (
+            <div className="App">
+            <Jumbotron>
+            <h1>{champion.name}'s page</h1>
+            <p>
+                <Link to={"/"}>
+                <Button variant="primary">Home</Button>
+                </Link>
+            </p>
+            </Jumbotron>
             <div>
-                <h1>Champion Page</h1>
                 <p>{champion.name}</p>
+            </div>
             </div>
         );
     }

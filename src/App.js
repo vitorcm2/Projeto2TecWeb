@@ -125,9 +125,11 @@ function App() {
           value={search}
           placeholder="Search..."
         />
+        <br></br><br></br>
+      
 
 
-        <header className="App-header">
+        <header className="Img">
           {showChampions && filteredChampions.map((obj, index) => {
             return (
               <OverlayTrigger
@@ -148,6 +150,7 @@ function App() {
             )
           })
           }
+
           {showItens && filteredItens.map((obj, index) => {
             return (
               <OverlayTrigger
