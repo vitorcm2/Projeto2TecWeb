@@ -1,18 +1,3 @@
 .container {
     padding: 1%;
   }
-
-.Habilities {
-  flex-wrap: wrap;
-  display: grid;
-  grid-template-columns: 550px auto auto auto auto;
-  color: black;
-}
-.Passive {
-  flex-wrap: wrap;
-  display: grid;
-  margin-left: 5rem ;
-  grid-template-columns: 385px auto;
-  color: black;
-
-}
