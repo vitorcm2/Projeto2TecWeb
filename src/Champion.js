@@ -62,7 +62,11 @@ function Champion({ match }) {
                     <img src={champion_url_loading + champion.name + champion_url_loading_end} alt={`img ${champion.name}`} />
                     <h4><sub>Champion Description</sub></h4>
                     <p>{champion.lore}</p>
+                    <div className="Passive">
                     <h4><sub>Champion Passive</sub></h4>
+                    <h4><sub>Champion Habilities</sub></h4>
+                    </div>
+                    <div className="Habilities">
                     <OverlayTrigger
                         trigger="hover"
                         placement={"bottom"}
@@ -81,11 +85,11 @@ function Champion({ match }) {
                         </div>
                     </OverlayTrigger>
 
-                    <h4><sub>Champion Habilities</sub></h4>
+                    
 
                     {championSpells.map((spell, index) => {
                         return (
-                            <OverlayTrigger
+                            <OverlayTrigger 
                                 trigger="hover"
                                 key={spell.id}
                                 placement={"bottom"}
@@ -100,12 +104,13 @@ function Champion({ match }) {
                             >
                                 <div >
                                     <div>{spell.name}</div>
-                                    <img className="Habilities" src={spell_url + spell.image.full} alt={`img ${champion.name}`} height="60" width="60" />
+                                    <img src={spell_url + spell.image.full} alt={`img ${champion.name}`} height="60" width="60" />
                                 </div>
                             </OverlayTrigger>
                         )
                     })
                     }
+                    </div>
                     <h4><sub>Champion Tips</sub></h4>
                     <Button
                         variant="success"
