@@ -7,6 +7,7 @@ import Collapse from 'react-bootstrap/Collapse'
 import Alert from 'react-bootstrap/Alert'
 import Popover from 'react-bootstrap/Popover'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import './Champion.css';
 
 
 function Champion({ match }) {
@@ -51,20 +52,22 @@ function Champion({ match }) {
                     <h1>{champion.name}'s page</h1>
                     <p>
                         <Link to={"/"}>
-                            <Button variant="primary">Home</Button>
+                            <Button variant="primary">◄ Home</Button>
                         </Link>
                     </p>
                 </Jumbotron>
-                <div>
-                    <h3>{champion.name} - {champion.title}</h3>
+                <div className="container">
+                    <h3>{champion.name}</h3>
+                    <h4><i>{champion.title}</i></h4>
                     <img src={champion_url_loading + champion.name + champion_url_loading_end} alt={`img ${champion.name}`} />
-
+                    <h4><sub>Champion Description</sub></h4>
                     <p>{champion.lore}</p>
+                    <h4><sub>Champion Passive</sub></h4>
                     <OverlayTrigger
-                        trigger="click"
-                        placement={"right"}
+                        trigger="hover"
+                        placement={"bottom"}
                         overlay={
-                            <Popover id={`popover-positioned-${"right"}`}>
+                            <Popover id={`popover-positioned-${"bottom"}`}>
                                 <Popover.Title as="h3">{champion.passive.name}</Popover.Title>
                                 <Popover.Content>
                                     {champion.passive.description}
@@ -74,18 +77,20 @@ function Champion({ match }) {
                     >
                         <div>
                             <div>{champion.passive.name}</div>
-                            <img src={passive_url + champion.passive.image.full} alt={`img ${champion.name}`} height="60" width="60" />
+                            <img src={passive_url + champion.passive.image.full} alt={`img ${champion.name}`} height="50" width="50" />
                         </div>
                     </OverlayTrigger>
+
+                    <h4><sub>Champion Habilities</sub></h4>
 
                     {championSpells.map((spell, index) => {
                         return (
                             <OverlayTrigger
-                                trigger="click"
+                                trigger="hover"
                                 key={spell.id}
-                                placement={"right"}
+                                placement={"bottom"}
                                 overlay={
-                                    <Popover id={`popover-positioned-${"right"}`}>
+                                    <Popover id={`popover-positioned-${"bottom"}`}>
                                         <Popover.Title as="h3">{spell.name}</Popover.Title>
                                         <Popover.Content>
                                             {spell.description}
@@ -93,15 +98,15 @@ function Champion({ match }) {
                                     </Popover>
                                 }
                             >
-                                <div>
+                                <div >
                                     <div>{spell.name}</div>
-                                    <img src={spell_url + spell.image.full} alt={`img ${champion.name}`} height="60" width="60" />
+                                    <img className="Habilities" src={spell_url + spell.image.full} alt={`img ${champion.name}`} height="60" width="60" />
                                 </div>
                             </OverlayTrigger>
                         )
                     })
                     }
-
+                    <h4><sub>Champion Tips</sub></h4>
                     <Button
                         variant="success"
                         onClick={() => setOpenAlly(!openAlly)}
@@ -109,7 +114,7 @@ function Champion({ match }) {
                         aria-expanded={openAlly}
                     >
                         Ally Tips
-                </Button>
+                    </Button>
                     <Collapse in={openAlly}>
                         <div id="example-collapse-text">
                             <Alert variant="success">
@@ -134,7 +139,7 @@ function Champion({ match }) {
                         aria-expanded={openEnemy}
                     >
                         Enemy Tips
-                </Button>
+                    </Button>
                     <Collapse in={openEnemy}>
                         <div id="example-collapse-text">
                             <Alert variant="danger">

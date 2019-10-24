@@ -1,26 +1,26 @@
-import React,{ useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import lol from "riot-lol";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
-function Summoners ({match}) {
+function Summoners({ match }) {
     const [summoner, setSummoner] = useState();
     const summoner_url = "http://ddragon.leagueoflegends.com/cdn/9.20.1/img/spell/"
 
-    useEffect(() =>{
+    useEffect(() => {
         console.log(match.params.id);
         lol
-      .getSummoner(match.params.id)
-      .then(summoner => {
-        console.log(summoner);
-        setSummoner(summoner);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+            .getSummoner(match.params.id)
+            .then(summoner => {
+                console.log(summoner);
+                setSummoner(summoner);
+            })
+            .catch(err => {
+                console.log(err);
+            });
 
 
     }, []);
@@ -31,10 +31,10 @@ function Summoners ({match}) {
                     <h1>{summoner.name}'s page</h1>
                     <p>
                         <Link to={"/"}>
-                        <Button variant="primary">Home</Button>
+                            <Button variant="primary">◄ Home</Button>
                         </Link>
                     </p>
-                </Jumbotron> 
+                </Jumbotron>
                 <img src={summoner_url + summoner.image.full} alt={`img ${summoner.name}`} height="200" width="200" />
                 <h3>{summoner.tooltip}</h3>
                 <br></br>

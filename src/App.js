@@ -102,14 +102,14 @@ function App() {
       <div className="App">
         <Jumbotron>
           <h1>Welcome to LeagueInfo!</h1>
-          <p>
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
-          </p>
+          <h5>
+            This is an epic platform designed for League of Legends lovers and made for those who want the best experience in the fields of justice. We are basically a collection of key information to understand this game that has just completed 10 long years.
+          </h5>
           <p>
             <a href="https://developer.riotgames.com/"><Button variant="primary">Powered by <strong>Riot API</strong></Button></a>
           </p>
         </Jumbotron>
+        <h4>Choose a category below:</h4>
         <Form>
           {['checkbox'].map(type => (
             <div key={`inline-${type}`} className="mb-3">
