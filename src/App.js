@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import lol from "riot-lol";
 
@@ -101,13 +101,13 @@ function App() {
     return (
       <div className="App">
         <Jumbotron>
-          <h1>Welcome to LeagueStats!</h1>
+          <h1>Welcome to LeagueInfo!</h1>
           <p>
             This is a simple hero unit, a simple jumbotron-style component for calling
             extra attention to featured content or information.
           </p>
           <p>
-            <a href="https://developer.riotgames.com/"><Button variant="primary">Riot API</Button></a>
+            <a href="https://developer.riotgames.com/"><Button variant="primary">Powered by <strong>Riot API</strong></Button></a>
           </p>
         </Jumbotron>
         <Form>
@@ -126,7 +126,7 @@ function App() {
           placeholder="Search..."
         />
         <br></br><br></br>
-      
+
 
 
         <header className="Img">
@@ -142,8 +142,8 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
-                  <Link to= {`/Champion/${obj.name}`}>
-                  <img src={obj.imageUrl} alt={`img ${obj.name}`} height="60" width="60" />
+                  <Link to={`/Champion/${obj.name}`}>
+                    <img src={obj.imageUrl} alt={`img ${obj.name}`} height="60" width="60" />
                   </Link>
                 </div>
               </OverlayTrigger>
@@ -163,8 +163,8 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
-                  <Link to= {`/Itens/${obj.name}`}>
-                  <img src={item_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
+                  <Link to={`/Itens/${obj.name}`}>
+                    <img src={item_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
                   </Link>
                 </div>
               </OverlayTrigger>
@@ -183,8 +183,8 @@ function App() {
                 }>
                 <div>
                   <div>{obj.name}</div>
-                  <Link to= {`/Summoners/${obj.name}`}>
-                  <img src={summoner_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
+                  <Link to={`/Summoners/${obj.name}`}>
+                    <img src={summoner_url + obj.image.full} alt={`img ${obj.name}`} height="60" width="60" />
                   </Link>
                 </div>
               </OverlayTrigger>
